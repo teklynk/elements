@@ -1,0 +1,23 @@
+.chat-line {
+  padding: 2px 4px 2px 4px;
+}
+.chat-line.new {
+  opacity: 1;
+}
+.chat-badges {
+  padding-left: 0;
+  margin-right: 0;
+}
+.chat-message {
+  padding-left: 0;
+  line-height: .5;
+  line-break: normal;
+  word-break: break-word;
+}
+.chat-title {
+  font-weight: bold;
+  padding-left: 4px;
+}
+.chat-name {
+  padding-left: 0;
+}

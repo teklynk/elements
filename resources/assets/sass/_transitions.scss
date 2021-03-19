@@ -1,0 +1,96 @@
+.fade-in {
+  animation: fade-in ease .5s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.fade-out {
+  animation: fade-out ease .5s;
+  animation-iteration-count: 1;
+  animation-fill-mode: backwards;
+}
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.slide-in {
+  overflow:hidden;
+  animation: slide-in .5s;
+  animation-iteration-count: 1;
+}
+@keyframes slide-in {
+  from {
+    margin-left: 100%;
+    width: 100%;
+  }
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
+}
+
+.shake {
+  animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+  animation-iteration-count: 1;
+}
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
+
+.flip {
+  overflow:hidden;
+  animation: flip .5s;
+  animation-iteration-count: 1;
+}
+@keyframes flip {
+  from {
+    transform: rotateX(180deg);
+  }
+  to {
+    transform: rotateX(360deg);
+  }
+}
+
+.hue-rotate {
+  overflow:hidden;
+  animation: grow .5s;
+  animation-iteration-count: 1;
+}
+@keyframes hue-rotate {
+  from {
+    filter: hue-rotate(45deg);
+  }
+  to {
+    filter: hue-rotate(360deg);
+  }
+}
