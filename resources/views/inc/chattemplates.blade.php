@@ -56,14 +56,18 @@
 
     .chat-colon {
         font-family: {{ $chat->chat_username_font }}  !important;
+        @if($chat->chat_msg_twitch_colors == 'off')
         color: {{ $chat->chat_msg_color }} !important;
+        @endif
         font-size: {{ $chat->chat_username_font_size }}px !important;
     }
 
     .chat-message, .chat-hosting-yes, .chat-notice{
         font-family: {{ $chat->chat_msg_font }} !important;
-        color: {{ $chat->chat_msg_color }} !important;
         font-size: {{ $chat->chat_msg_font_size }}px !important;
+        @if($chat->chat_msg_twitch_colors == 'off')
+        color: {{ $chat->chat_msg_color }} !important;
+        @endif
     }
 
     @if($chat->chat_template == 2)

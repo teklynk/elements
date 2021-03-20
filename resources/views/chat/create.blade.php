@@ -34,7 +34,7 @@
             </div>
 
             <div class="form-group">
-                <label for="chat_bot" class="control-label">Chat Bot</label>&nbsp;<a data-toggle="popover" data-placement="top" data-content="This will hide messages from the bot account."><i class="fa fa-info-circle"></i></a>
+                <label for="chat_bot" class="control-label">Chat Bot</label>&nbsp;<a data-toggle="popover" data-placement="top" data-content="You can add multiple channels by separating names with a comma or a space. StreamElements,Streamlabs,Nightbot"><i class="fa fa-info-circle"></i></a>
                 <input class="form-control" type="text" name="chat_bot"
                        value="@if(isset($chat->chat_bot)){{ $chat->chat_bot }}@else{{ old('chat_bot') }}@endif">
             </div>
@@ -118,33 +118,35 @@
             </div>
 
             <div class="form-group">
-                <label for="chat_title_text_shadow" class="control-label">Chat Title Text Shadow</label>
+                <label for="chat_title_text_shadow" class="control-label">Title Text Shadow</label>
                 <input type="checkbox" name="chat_title_text_shadow" id="chat_title_text_shadow"
                        value="@if(isset($chat->chat_title_text_shadow)){{ $chat->chat_title_text_shadow }}@else{{ old('chat_title_text_shadow', 'on') }}@endif"
                 @if(isset($chat->chat_title_text_shadow)){{ $chat->chat_title_text_shadow == 'on' ? 'checked' : '' }}@endif>
             </div>
 
             <div class="form-group">
-                <label for="chat_title_text_shadow_color" class="control-label">Chat Title Text Shadow Color</label>
+                <label for="chat_title_text_shadow_color" class="control-label">Title Text Shadow Color</label>
                 <input class="form-control" type="color" name="chat_title_text_shadow_color" id="chat_text_shadow_color"
                        value="@if(isset($chat->chat_title_text_shadow_color)){{ $chat->chat_title_text_shadow_color }}@else{{ old('chat_title_text_shadow_color') }}@endif"
                 @if(isset($chat->chat_title_text_shadow) && $chat->chat_title_text_shadow == 'off'){!! 'disabled readonly' !!}@endif
                 @if(!isset($chat)){!! 'disabled readonly' !!}@endif>
             </div>
+            <hr>
         </div>
 
         <div class="col-sm-12 mb-5">
-            <div class="form-group">
-                <label for="chat_use_twitch_colors" class="control-label">Use Twitch username colors</label>
-                <input type="checkbox" name="chat_use_twitch_colors" id="chat_use_twitch_colors"
-                       value="@if(isset($chat->chat_use_twitch_colors)){{ $chat->chat_use_twitch_colors }}@else{{ old('chat_use_twitch_colors', 'on') }}@endif"
-                @if(isset($chat->chat_use_twitch_colors)){{ $chat->chat_use_twitch_colors == 'on' ? 'checked' : '' }}@endif>
-            </div>
 
             <div class="form-group">
                 <label for="chat_username_color" class="control-label">Chat Username Color</label>
                 <input class="form-control" type="color" name="chat_username_color" @if(isset($chat->chat_use_twitch_colors) && $chat->chat_use_twitch_colors == 'on'){!! 'disabled readonly' !!}@endif
                        value="@if(isset($chat->chat_username_color)){{ $chat->chat_username_color }}@else{{ old('chat_username_color') }}@endif">
+            </div>
+
+            <div class="form-group">
+                <label for="chat_use_twitch_colors" class="control-label">Use Twitch username colors</label>
+                <input type="checkbox" name="chat_use_twitch_colors" id="chat_use_twitch_colors"
+                       value="@if(isset($chat->chat_use_twitch_colors)){{ $chat->chat_use_twitch_colors }}@else{{ old('chat_use_twitch_colors', 'on') }}@endif"
+                @if(isset($chat->chat_use_twitch_colors)){{ $chat->chat_use_twitch_colors == 'on' ? 'checked' : '' }}@endif>
             </div>
 
             <div class="form-group">
@@ -168,8 +170,15 @@
 
             <div class="form-group">
                 <label for="chat_msg_color" class="control-label">Chat Message Color</label>
-                <input class="form-control" type="color" name="chat_msg_color"
+                <input class="form-control" type="color" name="chat_msg_color" @if(isset($chat->chat_msg_twitch_colors) && $chat->chat_msg_twitch_colors == 'on'){!! 'disabled readonly' !!}@endif
                        value="@if(isset($chat->chat_msg_color)){{ $chat->chat_msg_color }}@else{{ old('chat_msg_color') }}@endif">
+            </div>
+
+            <div class="form-group">
+                <label for="chat_msg_twitch_colors" class="control-label">Use Twitch colors</label>
+                <input type="checkbox" name="chat_msg_twitch_colors" id="chat_msg_twitch_colors"
+                       value="@if(isset($chat->chat_msg_twitch_colors)){{ $chat->chat_msg_twitch_colors }}@else{{ old('chat_msg_twitch_colors', 'on') }}@endif"
+                @if(isset($chat->chat_msg_twitch_colors)){{ $chat->chat_msg_twitch_colors == 'on' ? 'checked' : '' }}@endif>
             </div>
 
             <div class="form-group">

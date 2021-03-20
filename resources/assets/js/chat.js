@@ -17,7 +17,7 @@ var chat = document.getElementById('chat'),
     randomColorsChosen = {},
     clientOptions = {
         options: {
-            debug: true
+            debug: debugMode
         },
         channels: channels
     },
@@ -139,9 +139,9 @@ function handleChat(channel, user, message, self) {
         }
     }
 
-    //hide messages from bot account
+    //skip messages from bot account
     if (botAccount > '') {
-        if (user['display-name'] === botAccount) {
+        if ($.inArray(user['display-name'], botAccount) > -1) {
             return false; //skip message
         }
     }
@@ -158,6 +158,7 @@ function handleChat(channel, user, message, self) {
     chatName.innerHTML = user['display-name'] || name;
 
     chatColon.className = 'chat-colon';
+    chatColon.style.color = color;
 
     chatMessage.className = 'chat-message';
 

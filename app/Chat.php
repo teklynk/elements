@@ -20,6 +20,7 @@ class Chat extends Model
         'chat_username_color',
         'chat_msg_color',
         'chat_use_twitch_colors',
+        'chat_msg_twitch_colors',
         'chat_username_font',
         'chat_msg_font',
         'chat_msg_font_size',

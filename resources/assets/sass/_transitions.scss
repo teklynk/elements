@@ -67,12 +67,12 @@
   }
 }
 
-.flip {
+.flipX {
   overflow:hidden;
-  animation: flip .5s;
+  animation: flipX .5s;
   animation-iteration-count: 1;
 }
-@keyframes flip {
+@keyframes flipX {
   from {
     transform: rotateX(180deg);
   }
@@ -81,16 +81,16 @@
   }
 }
 
-.hue-rotate {
+.flipY {
   overflow:hidden;
-  animation: grow .5s;
+  animation: flipY .5s;
   animation-iteration-count: 1;
 }
-@keyframes hue-rotate {
+@keyframes flipY {
   from {
-    filter: hue-rotate(45deg);
+    transform: rotateY(180deg);
   }
   to {
-    filter: hue-rotate(360deg);
+    transform: rotateY(360deg);
   }
 }

@@ -65,6 +65,14 @@ $('#chat_use_twitch_colors').click(function() {
     }
 });
 
+$('#chat_msg_twitch_colors').click(function() {
+    if ($(this).prop('checked') === true) {
+        $('input[name=chat_msg_color]').val('').addClass('disabled').attr('disabled', 'disabled').attr('readonly', 'readonly');
+    } else {
+        $('input[name=chat_msg_color]').removeClass('disabled').removeAttr('disabled').removeAttr('readonly');
+    }
+});
+
 $('#chat_text_shadow').click(function() {
     if ($(this).prop('checked') === true) {
         $('input[name=chat_text_shadow_color]').removeClass('disabled').removeAttr('disabled').removeAttr('readonly');

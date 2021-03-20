@@ -27,7 +27,7 @@
 
 <script>
     //variables for chat.js
-    var channels = ['{!! str_replace([',',' '], "','", $chat->chat_channel) !!}'], // Channels to initially join
+    var channels = ['{!! str_replace([',',' '], "','", trim($chat->chat_channel)) !!}'], // Channels to initially join
         fadeDelay = false, // Set to false to disable chat fade
         showChannel = true, // Show repespective channels if the channels is longer than 1
         useColor = {{ $chat->chat_use_twitch_colors == 'on' ? 'true' : 'false' }}, // Use chatters' colors or to inherit
@@ -40,7 +40,8 @@
         chatLimit = {{ $chat->chat_max_cnt }},
         transition = '{{ $chat->chat_transition }}',
         showNotices = false, // Show chat-delete-timeout chat-timedout chat-notice
-        botAccount = '{{ $chat->chat_bot }}',
+        botAccount = ['{!! str_replace([',',' '], "','", trim($chat->chat_bot)) !!}'],
+        debugMode = true,
         showConnectionNotices = false; // Show messages like "Connected", "Disconnected", "Parted"
 </script>
 <!-- Scripts -->

@@ -107,6 +107,7 @@ class ChatController extends Controller
 
         //checkboxes
         $chat->chat_use_twitch_colors = $request->input('chat_use_twitch_colors') ? 'on' : 'off';
+        $chat->chat_msg_twitch_colors = $request->input('chat_msg_twitch_colors') ? 'on' : 'off';
         $chat->chat_show_badges = $request->input('chat_show_badges') ? 'on' : 'off';
         $chat->chat_show_emotes = $request->input('chat_show_emotes') ? 'on' : 'off';
         $chat->chat_text_shadow = $request->input('chat_text_shadow') ? 'on' : 'off';
@@ -137,6 +138,7 @@ class ChatController extends Controller
 
         //checkboxes
         $chat->chat_use_twitch_colors = $request->input('chat_use_twitch_colors') ? 'on' : 'off';
+        $chat->chat_msg_twitch_colors = $request->input('chat_msg_twitch_colors') ? 'on' : 'off';
         $chat->chat_show_badges = $request->input('chat_show_badges') ? 'on' : 'off';
         $chat->chat_show_emotes = $request->input('chat_show_emotes') ? 'on' : 'off';
         $chat->chat_text_shadow = $request->input('chat_text_shadow') ? 'on' : 'off';
