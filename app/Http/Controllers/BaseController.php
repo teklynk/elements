@@ -90,12 +90,13 @@ class BaseController extends Controller
         //
     }
 
-
     public function fontPreview(Request $request) {
 
         $getFont = $request->input('font');
 
         return view('fontpreview')->with('font', $getFont);
     }
+
+
 
 }

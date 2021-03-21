@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 25);
+/******/ 	return __webpack_require__(__webpack_require__.s = 26);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -235,7 +235,7 @@ var self = module.exports = {
 	}
 }
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(13)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(14)))
 
 /***/ }),
 /* 1 */
@@ -248,11 +248,11 @@ var self = module.exports = {
  * building robust, powerful web applications using Vue and Laravel.
  */
 
-__webpack_require__(9);
-
-__webpack_require__(14);
-
 __webpack_require__(10);
+
+__webpack_require__(15);
+
+__webpack_require__(11);
 
 //window.Vue = require('vue');
 
@@ -270,12 +270,7 @@ __webpack_require__(10);
 
 /***/ }),
 /* 2 */,
-/* 3 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
+/* 3 */,
 /* 4 */
 /***/ (function(module, exports) {
 
@@ -307,6 +302,12 @@ __webpack_require__(10);
 
 /***/ }),
 /* 9 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
@@ -319,8 +320,8 @@ __webpack_require__(10);
  */
 
 try {
-  window.$ = window.jQuery = __webpack_require__(12);
-  __webpack_require__(11);
+  window.$ = window.jQuery = __webpack_require__(13);
+  __webpack_require__(12);
 } catch (e) {}
 
 /**
@@ -350,7 +351,7 @@ try {
 // });
 
 /***/ }),
-/* 10 */
+/* 11 */
 /***/ (function(module, exports) {
 
 $('[data-toggle="popover"]').popover();
@@ -452,8 +453,12 @@ $('#chat_template').change(function () {
     }
 }).change();
 
+//$('input, select, checkbox').change(function() {
+//    document.getElementById('chat_preview_iframe').contentDocument.location.reload(true);
+//}).change();
+
 /***/ }),
-/* 11 */
+/* 12 */
 /***/ (function(module, exports) {
 
 /*!
@@ -3039,7 +3044,7 @@ if (typeof jQuery === 'undefined') {
 
 
 /***/ }),
-/* 12 */
+/* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -13927,7 +13932,7 @@ return jQuery;
 
 
 /***/ }),
-/* 13 */
+/* 14 */
 /***/ (function(module, exports) {
 
 // shim for using process in browser
@@ -14117,10 +14122,10 @@ process.umask = function() { return 0; };
 
 
 /***/ }),
-/* 14 */
+/* 15 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var client = __webpack_require__(16);
+var client = __webpack_require__(17);
 module.exports = {
 	client,
 	Client: client
@@ -14128,10 +14133,10 @@ module.exports = {
 
 
 /***/ }),
-/* 15 */
+/* 16 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var fetch = __webpack_require__(23);
+var fetch = __webpack_require__(24);
 var _ = __webpack_require__(0);
 
 var api = function api(options, callback) {
@@ -14197,17 +14202,17 @@ module.exports = api;
 
 
 /***/ }),
-/* 16 */
+/* 17 */
 /***/ (function(module, exports, __webpack_require__) {
 
-/* WEBPACK VAR INJECTION */(function(global) {var api = __webpack_require__(15);
-var commands = __webpack_require__(17);
-var EventEmitter = __webpack_require__(18).EventEmitter;
-var logger = __webpack_require__(19);
-var parse = __webpack_require__(20);
-var timer = __webpack_require__(21);
+/* WEBPACK VAR INJECTION */(function(global) {var api = __webpack_require__(16);
+var commands = __webpack_require__(18);
+var EventEmitter = __webpack_require__(19).EventEmitter;
+var logger = __webpack_require__(20);
+var parse = __webpack_require__(21);
+var timer = __webpack_require__(22);
 var _global = typeof global !== "undefined" ? global : typeof window !== "undefined" ? window : {};
-var _WebSocket = _global.WebSocket || __webpack_require__(24);
+var _WebSocket = _global.WebSocket || __webpack_require__(25);
 var _ = __webpack_require__(0);
 
 // Client instance..
@@ -15656,10 +15661,10 @@ if(typeof window !== "undefined") {
 	window.tmi.Client = client;
 }
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(22)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(23)))
 
 /***/ }),
-/* 17 */
+/* 18 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var _ = __webpack_require__(0);
@@ -16237,7 +16242,7 @@ module.exports = {
 
 
 /***/ }),
-/* 18 */
+/* 19 */
 /***/ (function(module, exports) {
 
 /* istanbul ignore file */
@@ -16543,7 +16548,7 @@ function isUndefined(arg) {
 
 
 /***/ }),
-/* 19 */
+/* 20 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var _ = __webpack_require__(0);
@@ -16576,7 +16581,7 @@ module.exports = {
 
 
 /***/ }),
-/* 20 */
+/* 21 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -16834,7 +16839,7 @@ module.exports = {
 
 
 /***/ }),
-/* 21 */
+/* 22 */
 /***/ (function(module, exports) {
 
 // Initialize the queue with a specific delay..
@@ -16887,7 +16892,7 @@ exports.queue = queue;
 
 
 /***/ }),
-/* 22 */
+/* 23 */
 /***/ (function(module, exports) {
 
 var g;
@@ -16914,12 +16919,6 @@ module.exports = g;
 
 
 /***/ }),
-/* 23 */
-/***/ (function(module, exports) {
-
-/* (ignored) */
-
-/***/ }),
 /* 24 */
 /***/ (function(module, exports) {
 
@@ -16927,15 +16926,21 @@ module.exports = g;
 
 /***/ }),
 /* 25 */
+/***/ (function(module, exports) {
+
+/* (ignored) */
+
+/***/ }),
+/* 26 */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(1);
-__webpack_require__(7);
 __webpack_require__(8);
-__webpack_require__(3);
+__webpack_require__(9);
 __webpack_require__(4);
 __webpack_require__(5);
-module.exports = __webpack_require__(6);
+__webpack_require__(6);
+module.exports = __webpack_require__(7);
 
 
 /***/ })

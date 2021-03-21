@@ -188,5 +188,26 @@ class ChatController extends Controller
         return redirect('chat/' . $id . '/edit')->with('success', 'Chat Background Image Deleted');
     }
 
+    public function chatPreview($id) {
+
+        $chat = Chat::where('ref_id', $id)->first();
+
+        if (is_null($chat)) {
+            return abort(404);
+        }
+
+        $transparency = Transparency::where('int_value', $chat->chat_transparency)->first();
+        $gradient_transparency = Transparency::where('int_value', $chat->chat_template_gradient_transparency)->first();
+        $positions = Positions::where('id', $chat->chat_template_gradient_position)->first();
+        $background_positions = Positions::where('id', $chat->chat_background_gradient_position)->first();
+
+        return view('chat.preview')
+            ->with('chat', $chat)
+            ->with('transparency', $transparency)
+            ->with('gradient_transparency', $gradient_transparency)
+            ->with('positions', $positions)
+            ->with('background_positions', $background_positions);
+    }
+
 
 }

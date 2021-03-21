@@ -14,6 +14,7 @@ let mix = require('laravel-mix');
 
 mix.js('resources/assets/js/app.js', 'public/js')
     .js('resources/assets/js/chat.js', 'public/js')
+    .js('resources/assets/js/chatpreview.js', 'public/js')
     .sass('resources/assets/sass/app.scss', 'public/css')
     .sass('resources/assets/sass/chat.scss', 'public/css')
     .sass('resources/assets/sass/templates/template1.scss', 'public/css/templates')

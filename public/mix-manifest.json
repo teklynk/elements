@@ -6,5 +6,6 @@
   "/css/templates/template1.css": "/css/templates/template1.css",
   "/css/templates/template2.css": "/css/templates/template2.css",
   "/css/templates/template3.css": "/css/templates/template3.css",
-  "/css/templates/template4.css": "/css/templates/template4.css"
+  "/css/templates/template4.css": "/css/templates/template4.css",
+  "/js/chatpreview.js": "/js/chatpreview.js"
 }

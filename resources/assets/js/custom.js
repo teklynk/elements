@@ -96,3 +96,8 @@ $('#chat_template').change(function() {
         $('#gradient-options').hide();
     }
 }).change();
+
+
+//$('input, select, checkbox').change(function() {
+//    document.getElementById('chat_preview_iframe').contentDocument.location.reload(true);
+//}).change();

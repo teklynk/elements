@@ -19,6 +19,8 @@ Route::get('/', 'DashboardController@index');
 
 Route::get('/fontpreview', 'BaseController@fontPreview');
 
+Route::get('/preview/{id}', 'ChatController@chatPreview');
+
 
 Route::resource('/chat', 'ChatController');
 Route::get('/chat', 'ChatController@index');

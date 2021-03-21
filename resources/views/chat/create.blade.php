@@ -19,7 +19,7 @@
 
     <div class="row">
 
-        <div class="col-sm-12 mb-5">
+        <div class="col-sm-6 mb-5">
 
             <div class="form-group">
                 <label for="chat_scene" class="control-label">Name this chat</label>
@@ -77,6 +77,10 @@
                     </select>
                 </div>
             </div>
+        </div>
+
+        <div class="col-sm-6 mb-5">
+            <iframe class="chat-preview" id="chat_preview_iframe" src="@if(isset($chat->ref_id))../../preview/{{ $chat->ref_id }}@else about:blank @endif"></iframe>
         </div>
 
         <div class="col-sm-12 mb-5">
