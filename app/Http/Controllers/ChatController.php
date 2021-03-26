@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\File;
 use Illuminate\Http\Request;
 use App\Chat;
 use App\Fonts;
@@ -99,7 +100,11 @@ class ChatController extends Controller
     {
         $user_id = auth()->id();
 
-        $this->validate($request, ['chat_scene' => 'required', 'chat_channel' => 'required']);
+        $this->validate($request, [
+            'chat_scene' => 'required',
+            'chat_channel' => 'required',
+            'chat_bg_image' => 'mimes:jpeg,jpg,bmp,png,gif,svg'
+        ]);
 
         $chat = Chat::where('user_id', $user_id)->where('id', $id)->first();
 
@@ -117,7 +122,7 @@ class ChatController extends Controller
             $filenameWithExt = $request->file('chat_bg_image')->getClientOriginalName();
             $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
             $extension = $request->file('chat_bg_image')->getClientOriginalExtension();
-            $filenameToStore = $filename . '_' . sha1(time() * 10000) . '.' . $extension;
+            $filenameToStore = 'chat_' . $filename . '_' . sha1(time() * 10000) . '.' . $extension;
             $chat->chat_bg_image = $request->file('chat_bg_image')->storeAs('public/chat_bgs', $filenameToStore);
         }
 
@@ -130,7 +135,11 @@ class ChatController extends Controller
     {
         $user_id = auth()->id();
 
-        $this->validate($request, ['chat_scene' => 'required', 'chat_channel' => 'required']);
+        $this->validate($request, [
+            'chat_scene' => 'required',
+            'chat_channel' => 'required',
+            'chat_bg_image' => 'mimes:jpeg,jpg,bmp,png,gif,svg'
+        ]);
 
         $chat = new Chat;
 
@@ -151,7 +160,7 @@ class ChatController extends Controller
             $filenameWithExt = $request->file('chat_bg_image')->getClientOriginalName();
             $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
             $extension = $request->file('chat_bg_image')->getClientOriginalExtension();
-            $filenameToStore = $filename . '_' . sha1(time() * 10000) . '.' . $extension;
+            $filenameToStore = 'chat_' . $filename . '_' . sha1(time() * 10000) . '.' . $extension;
             $chat->chat_bg_image = $request->file('chat_bg_image')->storeAs('public/chat_bgs', $filenameToStore);
         }
 
@@ -165,6 +174,13 @@ class ChatController extends Controller
         $user_id = auth()->id();
 
         $chat = Chat::where('user_id', $user_id)->where('id', $id)->first();
+
+        $image_path = public_path(str_replace('public/', 'storage/', $chat->chat_bg_image));
+
+        if (file_exists($image_path)) {
+            File::delete($image_path);
+        }
+
         $chat->delete();
 
         return redirect('chat')->with('success', 'Chat Deleted');
@@ -176,6 +192,12 @@ class ChatController extends Controller
         $user_id = auth()->id();
 
         $chat = Chat::where('user_id', $user_id)->where('id', $id)->first();
+
+        $image_path = public_path(str_replace('public/', 'storage/', $chat->chat_bg_image));
+
+        if (file_exists($image_path)) {
+            File::delete($image_path);
+        }
 
         $chat->chat_bg_image = NULL;
 
