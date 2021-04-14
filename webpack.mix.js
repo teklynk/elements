@@ -13,10 +13,13 @@ let mix = require('laravel-mix');
 
 
 mix.js('resources/assets/js/app.js', 'public/js')
+    .js('resources/assets/js/tmi.js', 'public/js')
     .js('resources/assets/js/chat.js', 'public/js')
     .js('resources/assets/js/chatpreview.js', 'public/js')
+    .js('resources/assets/js/overlay.js', 'public/js')
     .sass('resources/assets/sass/app.scss', 'public/css')
     .sass('resources/assets/sass/chat.scss', 'public/css')
+    .sass('resources/assets/sass/overlay.scss', 'public/css')
     .sass('resources/assets/sass/templates/template1.scss', 'public/css/templates')
     .sass('resources/assets/sass/templates/template2.scss', 'public/css/templates')
     .sass('resources/assets/sass/templates/template3.scss', 'public/css/templates')

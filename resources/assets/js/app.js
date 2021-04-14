@@ -7,7 +7,9 @@
 
 require('./bootstrap');
 
-require('tmi.js');
+//require('tmi.js');
+
+require('bootstrap-toggle');
 
 require('./custom.js');
 

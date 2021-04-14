@@ -28,13 +28,19 @@
             </div>
 
             <div class="form-group">
-                <label for="chat_channel" class="control-label">Twitch Channel</label>&nbsp;<a data-toggle="popover" data-placement="top" data-content="You can add multiple channels by separating names with a comma or a space. GamerX,RetroLife,CODoIt,FortDay"><i class="fa fa-info-circle"></i></a>
+                <label for="chat_channel" class="control-label">Twitch Channel</label>&nbsp;<a data-toggle="popover"
+                                                                                               data-placement="top"
+                                                                                               data-content="You can add multiple channels by separating names with a comma or a space. GamerX,RetroLife,CODoIt,FortDay"><i
+                            class="fa fa-info-circle"></i></a>
                 <input class="form-control" type="text" name="chat_channel"
                        value="@if(isset($chat->chat_channel)){{ $chat->chat_channel }}@else{{ old('chat_channel') }}@endif">
             </div>
 
             <div class="form-group">
-                <label for="chat_bot" class="control-label">Chat Bot</label>&nbsp;<a data-toggle="popover" data-placement="top" data-content="You can add multiple channels by separating names with a comma or a space. StreamElements,Streamlabs,Nightbot"><i class="fa fa-info-circle"></i></a>
+                <label for="chat_bot" class="control-label">Chat Bot</label>&nbsp;<a data-toggle="popover"
+                                                                                     data-placement="top"
+                                                                                     data-content="You can add multiple channels by separating names with a comma or a space. StreamElements,Streamlabs,Nightbot"><i
+                            class="fa fa-info-circle"></i></a>
                 <input class="form-control" type="text" name="chat_bot"
                        value="@if(isset($chat->chat_bot)){{ $chat->chat_bot }}@else{{ old('chat_bot') }}@endif">
             </div>
@@ -51,25 +57,30 @@
             </div>
 
             <div class="row" id="gradient-options" style="display: none;">
-                <div class="col-lg-6">
+                <div class="col-lg-3">
                     <label for="">Gradient: Start</label>
-                    <input name="chat_template_gradient_start" type="color" class="form-control" value="@if(isset($chat->chat_template_gradient_start)){{ $chat->chat_template_gradient_start }}@else{{ old('chat_template_gradient_start') }}@endif">
+                    <input name="chat_template_gradient_start" type="color" class="form-control"
+                           value="@if(isset($chat->chat_template_gradient_start)){{ $chat->chat_template_gradient_start }}@else{{ old('chat_template_gradient_start') }}@endif">
                 </div>
-                <div class="col-lg-6">
+                <div class="col-lg-9">
                     <label for="">Gradient: End</label>
-                    <input name="chat_template_gradient_end" type="color" class="form-control" value="@if(isset($chat->chat_template_gradient_end)){{ $chat->chat_template_gradient_end }}@else{{ old('chat_template_gradient_end') }}@endif">
+                    <input name="chat_template_gradient_end" type="color" class="form-control"
+                           value="@if(isset($chat->chat_template_gradient_end)){{ $chat->chat_template_gradient_end }}@else{{ old('chat_template_gradient_end') }}@endif">
                 </div>
                 <div><p>&nbsp;</p></div>
                 <div class="form-group range-slider col-lg-6">
-                    <label for="chat_template_gradient_transparency" class="control-label">Gradient: Transparency</label>
-                    <input type="range" name="chat_template_gradient_transparency" class="range-slider-range" min="0" max="100" step="5"
+                    <label for="chat_template_gradient_transparency" class="control-label">Gradient:
+                        Transparency</label>
+                    <input type="range" name="chat_template_gradient_transparency" class="range-slider-range" min="0"
+                           max="100" step="5"
                            value="@if(isset($chat->chat_template_gradient_transparency)){{ $chat->chat_template_gradient_transparency }}@else{{ old('chat_template_gradient_transparency', '0') }}@endif">
                     <small class="range-slider-value"></small>
                     <small>%</small>
                 </div>
                 <div class="col-lg-6">
                     <label for="chat_template_gradient_position" class="control-label">Position</label>
-                    <select class="form-control" name="chat_template_gradient_position" id="chat_template_gradient_position">
+                    <select class="form-control" name="chat_template_gradient_position"
+                            id="chat_template_gradient_position">
                         @foreach($positions as $position)
                             <option value="{{ $position->id }}"
                             @if(isset($chat->chat_template_gradient_position)){{ $position->id == $chat->chat_template_gradient_position ? 'selected' : '' }}@endif>{{ $position->position  }}</option>
@@ -79,8 +90,12 @@
             </div>
         </div>
 
-        <div class="col-sm-6 mb-5">
-            <iframe class="chat-preview" id="chat_preview_iframe" src="@if(isset($chat->ref_id))../../preview/{{ $chat->ref_id }}@else about:blank @endif"></iframe>
+        <div class="col-lg-6 col-sm-12 mb-5">
+            @if(isset($chat->ref_id))
+            <div class="text-center"><a class="btn btn-default" href="@if(isset($chat->ref_id))../../chat/{{ $chat->ref_id }}@else about:blank @endif" target="_blank">Live Preview &#x2197;</a></div>
+            @endif
+            <iframe class="chat-preview" id="chat_preview_iframe"
+                    src="@if(isset($chat->ref_id))../../chat/preview/{{ $chat->ref_id }}@else about:blank @endif"></iframe>
         </div>
 
         <div class="col-sm-12 mb-5">
@@ -123,9 +138,11 @@
 
             <div class="form-group">
                 <label for="chat_title_text_shadow" class="control-label">Title Text Shadow</label>
-                <input type="checkbox" name="chat_title_text_shadow" id="chat_title_text_shadow"
-                       value="@if(isset($chat->chat_title_text_shadow)){{ $chat->chat_title_text_shadow }}@else{{ old('chat_title_text_shadow', 'on') }}@endif"
-                @if(isset($chat->chat_title_text_shadow)){{ $chat->chat_title_text_shadow == 'on' ? 'checked' : '' }}@endif>
+                <div><input type="checkbox" data-toggle="toggle" name="chat_title_text_shadow"
+                            id="chat_title_text_shadow"
+                            value="@if(isset($chat->chat_title_text_shadow)){{ $chat->chat_title_text_shadow }}@else{{ old('chat_title_text_shadow', 'on') }}@endif"
+                    @if(isset($chat->chat_title_text_shadow)){{ $chat->chat_title_text_shadow == 'on' ? 'checked' : '' }}@endif>
+                </div>
             </div>
 
             <div class="form-group">
@@ -142,15 +159,18 @@
 
             <div class="form-group">
                 <label for="chat_username_color" class="control-label">Chat Username Color</label>
-                <input class="form-control" type="color" name="chat_username_color" @if(isset($chat->chat_use_twitch_colors) && $chat->chat_use_twitch_colors == 'on'){!! 'disabled readonly' !!}@endif
+                <input class="form-control" type="color" name="chat_username_color"
+                       @if(isset($chat->chat_use_twitch_colors) && $chat->chat_use_twitch_colors == 'on'){!! 'disabled readonly' !!}@endif
                        value="@if(isset($chat->chat_username_color)){{ $chat->chat_username_color }}@else{{ old('chat_username_color') }}@endif">
             </div>
 
             <div class="form-group">
                 <label for="chat_use_twitch_colors" class="control-label">Use Twitch username colors</label>
-                <input type="checkbox" name="chat_use_twitch_colors" id="chat_use_twitch_colors"
-                       value="@if(isset($chat->chat_use_twitch_colors)){{ $chat->chat_use_twitch_colors }}@else{{ old('chat_use_twitch_colors', 'on') }}@endif"
-                @if(isset($chat->chat_use_twitch_colors)){{ $chat->chat_use_twitch_colors == 'on' ? 'checked' : '' }}@endif>
+                <div><input type="checkbox" data-toggle="toggle" name="chat_use_twitch_colors"
+                            id="chat_use_twitch_colors"
+                            value="@if(isset($chat->chat_use_twitch_colors)){{ $chat->chat_use_twitch_colors }}@else{{ old('chat_use_twitch_colors', 'on') }}@endif"
+                    @if(isset($chat->chat_use_twitch_colors)){{ $chat->chat_use_twitch_colors == 'on' ? 'checked' : '' }}@endif>
+                </div>
             </div>
 
             <div class="form-group">
@@ -174,15 +194,18 @@
 
             <div class="form-group">
                 <label for="chat_msg_color" class="control-label">Chat Message Color</label>
-                <input class="form-control" type="color" name="chat_msg_color" @if(isset($chat->chat_msg_twitch_colors) && $chat->chat_msg_twitch_colors == 'on'){!! 'disabled readonly' !!}@endif
+                <input class="form-control" type="color" name="chat_msg_color"
+                       @if(isset($chat->chat_msg_twitch_colors) && $chat->chat_msg_twitch_colors == 'on'){!! 'disabled readonly' !!}@endif
                        value="@if(isset($chat->chat_msg_color)){{ $chat->chat_msg_color }}@else{{ old('chat_msg_color') }}@endif">
             </div>
 
             <div class="form-group">
                 <label for="chat_msg_twitch_colors" class="control-label">Use Twitch colors</label>
-                <input type="checkbox" name="chat_msg_twitch_colors" id="chat_msg_twitch_colors"
-                       value="@if(isset($chat->chat_msg_twitch_colors)){{ $chat->chat_msg_twitch_colors }}@else{{ old('chat_msg_twitch_colors', 'on') }}@endif"
-                @if(isset($chat->chat_msg_twitch_colors)){{ $chat->chat_msg_twitch_colors == 'on' ? 'checked' : '' }}@endif>
+                <div><input type="checkbox" data-toggle="toggle" name="chat_msg_twitch_colors"
+                            id="chat_msg_twitch_colors"
+                            value="@if(isset($chat->chat_msg_twitch_colors)){{ $chat->chat_msg_twitch_colors }}@else{{ old('chat_msg_twitch_colors', 'on') }}@endif"
+                    @if(isset($chat->chat_msg_twitch_colors)){{ $chat->chat_msg_twitch_colors == 'on' ? 'checked' : '' }}@endif>
+                </div>
             </div>
 
             <div class="form-group">
@@ -205,13 +228,15 @@
             </div>
 
             <div class="row" id="gradient-options">
-                <div class="col-lg-6">
+                <div class="col-lg-3">
                     <label for="chat_background_gradient_start">Gradient: Start</label>
-                    <input name="chat_background_gradient_start" type="color" class="form-control" value="@if(isset($chat->chat_background_gradient_start)){{ $chat->chat_background_gradient_start }}@else{{ old('chat_background_gradient_start') }}@endif">
+                    <input name="chat_background_gradient_start" type="color" class="form-control"
+                           value="@if(isset($chat->chat_background_gradient_start)){{ $chat->chat_background_gradient_start }}@else{{ old('chat_background_gradient_start') }}@endif">
                 </div>
-                <div class="col-lg-6">
+                <div class="col-lg-9">
                     <label for="chat_background_gradient_end">Gradient: End</label>
-                    <input name="chat_background_gradient_end" type="color" class="form-control" value="@if(isset($chat->chat_background_gradient_end)){{ $chat->chat_background_gradient_end }}@else{{ old('chat_background_gradient_end') }}@endif">
+                    <input name="chat_background_gradient_end" type="color" class="form-control"
+                           value="@if(isset($chat->chat_background_gradient_end)){{ $chat->chat_background_gradient_end }}@else{{ old('chat_background_gradient_end') }}@endif">
                 </div>
                 <div><p>&nbsp;</p></div>
                 <div class="form-group range-slider col-lg-6">
@@ -222,8 +247,9 @@
                     <small>%</small>
                 </div>
                 <div class="col-lg-6">
-                    <label for="chat_background_gradient_position" class="control-label">Position</label>
-                    <select class="form-control" name="chat_background_gradient_position" id="chat_background_gradient_position">
+                    <label for="chat_background_gradient_position" class="control-label">Gradient: Position</label>
+                    <select class="form-control" name="chat_background_gradient_position"
+                            id="chat_background_gradient_position">
                         @foreach($positions as $position)
                             <option value="{{ $position->id }}"
                             @if(isset($chat->chat_background_gradient_position)){{ $position->id == $chat->chat_background_gradient_position ? 'selected' : '' }}@endif>{{ $position->position  }}</option>
@@ -239,12 +265,15 @@
             </div>
 
             @if(isset($chat->chat_bg_image))
-            <div class="form-group">
-                <button class="btn btn-danger" id="chat_bg_remove_image" data-id='{{ $chat->id }}' type="button">Remove Image</button>
-            </div>
-            <div class="form-group" id="chat_bg_image_preview">
-                <img class="img-responsive img-thumbnail" src="{!! str_replace('public/', '../../storage/', $chat->chat_bg_image) !!}">
-            </div>
+                <div class="form-group">
+                    <button class="btn btn-danger" id="chat_bg_remove_image" data-id='{{ $chat->id }}' type="button">
+                        Remove Image
+                    </button>
+                </div>
+                <div class="form-group" id="chat_bg_image_preview">
+                    <img class="img-responsive img-thumbnail"
+                         src="{!! str_replace('public/', '../../storage/', $chat->chat_bg_image) !!}">
+                </div>
             @endif
 
         </div>
@@ -260,7 +289,10 @@
             </div>
 
             <div class="form-group range-slider">
-                <label for="chat_refresh" class="control-label">Refresh</label>&nbsp;<a data-toggle="popover" data-placement="top" data-content="Clears chat box if a message sits idle for longer than the Refresh time."><i class="fa fa-info-circle"></i></a>
+                <label for="chat_refresh" class="control-label">Refresh</label>&nbsp;<a data-toggle="popover"
+                                                                                        data-placement="top"
+                                                                                        data-content="Clears chat box if a message sits idle for longer than the Refresh time."><i
+                            class="fa fa-info-circle"></i></a>
                 <input type="range" name="chat_refresh" class="range-slider-range" min="0" max="600" step="10"
                        value="@if(isset($chat->chat_refresh)){{ $chat->chat_refresh }}@else{{ old('chat_refresh', '0') }}@endif"
                        id="myRange">
@@ -281,9 +313,10 @@
 
             <div class="form-group">
                 <label for="chat_text_shadow" class="control-label">Chat Text Shadow</label>
-                <input type="checkbox" name="chat_text_shadow" id="chat_text_shadow"
-                       value="@if(isset($chat->chat_text_shadow)){{ $chat->chat_text_shadow }}@else{{ old('chat_text_shadow', 'on') }}@endif"
-                @if(isset($chat->chat_text_shadow)){{ $chat->chat_text_shadow == 'on' ? 'checked' : '' }}@endif>
+                <div><input type="checkbox" data-toggle="toggle" name="chat_text_shadow" id="chat_text_shadow"
+                            value="@if(isset($chat->chat_text_shadow)){{ $chat->chat_text_shadow }}@else{{ old('chat_text_shadow', 'on') }}@endif"
+                    @if(isset($chat->chat_text_shadow)){{ $chat->chat_text_shadow == 'on' ? 'checked' : '' }}@endif>
+                </div>
             </div>
 
             <div class="form-group">
@@ -296,16 +329,18 @@
 
             <div class="form-group">
                 <label for="chat_show_badges" class="control-label">Show Badges</label>
-                <input type="checkbox" name="chat_show_badges" id="chat_show_badges"
-                       value="@if(isset($chat->chat_show_badges)){{ $chat->chat_show_badges }}@else{{ old('chat_show_badges', 'on') }}@endif"
-                @if(isset($chat->chat_show_badges)){{ $chat->chat_show_badges == 'on' ? 'checked' : '' }}@endif>
+                <div><input type="checkbox" data-toggle="toggle" name="chat_show_badges" id="chat_show_badges"
+                            value="@if(isset($chat->chat_show_badges)){{ $chat->chat_show_badges }}@else{{ old('chat_show_badges', 'on') }}@endif"
+                    @if(isset($chat->chat_show_badges)){{ $chat->chat_show_badges == 'on' ? 'checked' : '' }}@endif>
+                </div>
             </div>
 
             <div class="form-group">
                 <label for="chat_show_emotes" class="control-label">Show Emotes</label>
-                <input type="checkbox" name="chat_show_emotes" id="chat_show_emotes"
-                       value="@if(isset($chat->chat_show_emotes)){{ $chat->chat_show_emotes }}@else{{ old('chat_show_emotes', 'on') }}@endif"
-                @if(isset($chat->chat_show_emotes)){{ $chat->chat_show_emotes == 'on' ? 'checked' : '' }}@endif>
+                <div><input type="checkbox" data-toggle="toggle" name="chat_show_emotes" id="chat_show_emotes"
+                            value="@if(isset($chat->chat_show_emotes)){{ $chat->chat_show_emotes }}@else{{ old('chat_show_emotes', 'on') }}@endif"
+                    @if(isset($chat->chat_show_emotes)){{ $chat->chat_show_emotes == 'on' ? 'checked' : '' }}@endif>
+                </div>
             </div>
 
         </div>

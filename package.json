@@ -11,15 +11,15 @@
   },
   "dependencies": {
     "axios": "^0.15.3",
+    "bootstrap": "^3.4.1",
+    "bootstrap-popover-x": "^1.4.7",
     "bootstrap-sass": "^3.3.7",
+    "bootstrap-toggle": "^2.2.2",
     "cross-env": "^3.2.3",
+    "font-awesome": "^4.7.0",
     "jquery": "^3.1.1",
     "laravel-mix": "0.*",
     "lodash": "^4.17.4",
-    "vue": "^2.1.10",
-    "bootstrap": "^3.4.1",
-    "bootstrap-popover-x": "^1.4.7",
-    "font-awesome": "^4.7.0",
-    "tmi.js": "^1.7.5"
+    "vue": "^2.1.10"
   }
 }

@@ -63,20 +63,12 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 28);
+/******/ 	return __webpack_require__(__webpack_require__.s = 20);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ 28:
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(3);
-
-
-/***/ }),
-
-/***/ 3:
+/***/ 2:
 /***/ (function(module, exports) {
 
 var refreshRate = 0;
@@ -120,6 +112,14 @@ names.forEach(function (el, index) {
         $('#chat').append('<div class="chat-line new ' + transition + '">' + '<span class="chat-badges"><div class="' + badge + '"></div></span>' + '<span class="chat-name">' + names[index] + '</span>' + '<span class="chat-colon"></span>' + '<span class="chat-message">' + messages[index] + ' ' + emote + '</span></div>');
     }, index * interval);
 });
+
+/***/ }),
+
+/***/ 20:
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(2);
+
 
 /***/ })
 

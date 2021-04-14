@@ -9,7 +9,6 @@
     @yield('styles')
 </head>
 <body>
-
 @include('inc.navbar')
 
 <div class="container">

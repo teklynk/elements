@@ -7,5 +7,9 @@
   "/css/templates/template2.css": "/css/templates/template2.css",
   "/css/templates/template3.css": "/css/templates/template3.css",
   "/css/templates/template4.css": "/css/templates/template4.css",
-  "/js/chatpreview.js": "/js/chatpreview.js"
+  "/js/chatpreview.js": "/js/chatpreview.js",
+  "/js/overlay.js": "/js/overlay.js",
+  "/js/tmi.js": "/js/tmi.js",
+  "/js/dark-mode-switch.js": "/js/dark-mode-switch.js",
+  "/css/overlay.css": "/css/overlay.css"
 }

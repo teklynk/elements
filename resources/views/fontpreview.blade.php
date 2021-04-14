@@ -9,7 +9,7 @@
         html,body,p {
             padding: 0;
             margin: 0;
-            font-size: 20px;
+            font-size: 14px;
             font-family: '{{ $font }}';
             text-align: left;
             background: transparent;
@@ -19,7 +19,7 @@
 <body>
 
 <div>
-    <p style="font-family: '{{ $font }}';">The quick brown fox jumps over the lazy dog.</p>
+    <p style="font-family: '{{ $font }}';">The quick brown fox</p>
 </div>
 
 </body>
