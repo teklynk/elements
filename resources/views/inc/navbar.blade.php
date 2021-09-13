@@ -18,6 +18,9 @@
                 <li class="nav-item {{Request::is('soundboard','soundboard/*') ? 'active' : ''}}">
                     <a class="nav-link" href="/soundboard">Soundboard</a>
                 </li>
+                <li class="nav-item {{Request::is('links','links/*') ? 'active' : ''}}">
+                    <a class="nav-link" href="/links">Links</a>
+                </li>
             </ul>
         @endif
 

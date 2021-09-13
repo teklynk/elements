@@ -63,12 +63,12 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 27);
+/******/ 	return __webpack_require__(__webpack_require__.s = 14);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ 2:
+/***/ 1:
 /***/ (function(module, exports) {
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
@@ -351,7 +351,11 @@ function clearChat(channel) {
             h.className += ' chat-cleared';
         }
     }
+
     chatNotice('Chat was cleared in ' + capitalize(dehash(channel)), 1000, 1, 'chat-delete-clear');
+    setTimeout(function () {
+        window.location.reload(true);
+    }, 1000);
 }
 
 function hosting(channel, target, viewers, unhost) {
@@ -416,10 +420,10 @@ client.connect();
 
 /***/ }),
 
-/***/ 27:
+/***/ 14:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(2);
+module.exports = __webpack_require__(1);
 
 
 /***/ })
