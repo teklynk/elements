@@ -66,7 +66,7 @@ function formatEmotes(text, emotes) {
                         return ''
                     });
                 splitText = splitText.slice(0, mote[0]).concat(empty).concat(splitText.slice(mote[1] + 1, splitText.length));
-                splitText.splice(mote[0], 1, '<img class="emoticon" src="https://static-cdn.jtvnw.net/emoticons/v1/' + i + '/3.0">');
+                splitText.splice(mote[0], 1, '<img class="emoticon" src="https://static-cdn.jtvnw.net/emoticons/v2/' + i + '/default/dark/3.0">');
             }
         }
     }
@@ -277,9 +277,7 @@ function clearChat(channel) {
             h.className += ' chat-cleared';
         }
     }
-
-    chatNotice('Chat was cleared in ' + capitalize(dehash(channel)), 1000, 1, 'chat-delete-clear');
-    setTimeout(function(){ window.location.reload(true); }, 1000);
+    chatNotice('Chat was cleared in ' + capitalize(dehash(channel)), 1000, 1, 'chat-delete-clear')
 }
 
 function hosting(channel, target, viewers, unhost) {
@@ -340,6 +338,5 @@ client.addListener('part', function (channel, username) {
 client.addListener('crash', function () {
     chatNotice('Crashed', 10000, 4, 'chat-crash');
 });
-
 
 client.connect();
