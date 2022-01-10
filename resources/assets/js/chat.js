@@ -277,7 +277,10 @@ function clearChat(channel) {
             h.className += ' chat-cleared';
         }
     }
-    chatNotice('Chat was cleared in ' + capitalize(dehash(channel)), 1000, 1, 'chat-delete-clear')
+    chatNotice('Chat was cleared in ' + capitalize(dehash(channel)), 1000, 1, 'chat-delete-clear');
+    setTimeout(function () {
+        window.location.reload(true);
+    }, 1000);
 }
 
 function hosting(channel, target, viewers, unhost) {
